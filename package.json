@@ -1,7 +1,7 @@
 {
-	"publisher": "xsf0105",
-	"name": "open-in-github-icon",
-	"displayName": "Open in GitHub Icon",
+	"publisher": "xxxsf",
+	"name": "open-in-github-pr",
+	"displayName": "Open in GitHub pr",
 	"version": "0.0.1",
 	"private": true,
 	"packageManager": "pnpm@8.1.1",
@@ -33,7 +33,7 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "openInGitHub.openProject",
+				"command": "openInGitHubPR.openProject",
 				"title": "Hello World"
 			}
 		]
