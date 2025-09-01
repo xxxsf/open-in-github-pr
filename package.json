@@ -1,8 +1,8 @@
 {
 	"publisher": "xxxsf",
 	"name": "open-in-github-pr",
-	"displayName": "Open in GitHub pr",
-	"version": "0.0.1",
+	"displayName": "Open in github pr",
+	"version": "0.0.2",
 	"private": true,
 	"packageManager": "pnpm@8.1.1",
 	"description": "Add a icon button to go to the GitHub on the status bar",
