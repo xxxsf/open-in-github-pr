@@ -22,6 +22,13 @@ export function activate(context: { subscriptions: Disposable[] }) {
 			} else {
 				const gitExtension = extensions.getExtension('vscode.git')?.exports;
 				const api = gitExtension?.getAPI(1);
+				const repo = api.repositories[0];
+				
+				const currentBranch = repo.state.HEAD;
+				let branchName = 'main'
+				if (currentBranch) {
+					branchName = currentBranch.name;
+				}
 				
 				if(api.repositories) {
 					const repo = api.repositories[0];
@@ -35,7 +42,8 @@ export function activate(context: { subscriptions: Disposable[] }) {
 						// e.g. git@github.xxx.com:xxx/example.git
 						url = fetchUrl.split('@')[1].replace(':', '/').split('.git')[0];
 					}
-					env.openExternal(Uri.parse(`https://${url}/compare`));
+					
+					env.openExternal(Uri.parse(`https://${url}/compare/main...${branchName}`));
 
 				} else {
 					window.showInformationMessage("Cannot get the git info.");
